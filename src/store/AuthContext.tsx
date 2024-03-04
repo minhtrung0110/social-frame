@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { IUser } from "@/types/snapgram.ts";
+import { getCurrentUser } from "@/app/services/appwrite/api.ts";
 
 //import { getCurrentUser } from "@/lib/appwrite/api";
 
@@ -41,8 +42,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const checkAuthUser = async () => {
     setIsLoading(true);
+    console.log("running checkAuthUser");
     try {
-      const currentAccount: any = true; //await getCurrentUser();
+      const currentAccount = await getCurrentUser();
+      console.log("Current Account", currentAccount);
       if (currentAccount) {
         setUser({
           id: currentAccount.$id,
@@ -73,7 +76,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       cookieFallback === null ||
       cookieFallback === undefined
     ) {
-      navigate("/sign-in");
+      navigate("/login");
     }
 
     checkAuthUser();

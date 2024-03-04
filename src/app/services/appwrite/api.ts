@@ -99,7 +99,7 @@ export async function getCurrentUser() {
     );
 
     if (!currentUser) throw Error;
-
+    console.log("Bug:", currentUser);
     return currentUser.documents[0];
   } catch (error) {
     console.log(error);
