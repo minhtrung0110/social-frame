@@ -1,9 +1,17 @@
 // Libraries
 import React from "react";
 import { Button } from "@/app/components/ui/button.tsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { multiFormatDateString } from "@/app/utils";
 import Loader from "@/app/components/atoms/Loader";
+import { useUserContext } from "@/store/AuthContext.tsx";
+import {
+  useDeletePost,
+  useGetPostById,
+  useGetUserPosts,
+} from "@/app/queries/SnapGram/queries.ts";
+import PostStats from "@/app/modules/SnapGram/components/modecules/PostStats";
+import GridPostList from "@/app/modules/SnapGram/components/modecules/GridPostList";
 
 // Component
 
@@ -15,7 +23,7 @@ interface Props {
   // Define your component's props here
 }
 
-const PostDetail: React.FC<Props> = (props) => {
+const PostDetail: React.FC<Props> = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { user } = useUserContext();

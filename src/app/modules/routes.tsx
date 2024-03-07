@@ -17,6 +17,9 @@ import Explore from "@/app/modules/SnapGram/containers/Explore";
 import Saved from "@/app/modules/SnapGram/containers/Saved";
 import AllUsers from "@/app/modules/SnapGram/containers/All_User";
 import Profile from "@/app/modules/SnapGram/containers/Profile";
+import CreatePost from "@/app/modules/SnapGram/containers/CreatePost";
+import UpdatePost from "@/app/modules/SnapGram/containers/UpdatePost";
+import UpdateProfile from "@/app/modules/SnapGram/containers/UpdateProfile";
 
 const routes: TRoutes = [
   {
@@ -93,6 +96,18 @@ const rootRoutes = createBrowserRouter([
           {
             path: ROUTES.PROFILE.path,
             element: <Profile />,
+          },
+          {
+            path: ROUTES.CREATE_POST.path,
+            element: <CreatePost />,
+          },
+          {
+            path: ROUTES.UPDATE_POST.path,
+            element: <UpdatePost />,
+          },
+          {
+            path: ROUTES.UPDATE_PROFILE.path,
+            element: <UpdateProfile />,
           },
         ],
       },
