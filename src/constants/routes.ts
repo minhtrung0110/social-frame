@@ -16,11 +16,17 @@ export const ROUTES = {
   SNAP_GRAM: {
     key: "snap-gram",
     name: "Snap Gram",
-    path: "/snap-gram",
-    exact: true,
-    isPrivate: false,
+    path: "/",
+    exact: false,
+    isPrivate: true,
   },
-
+  /*-----SNAP GRAM-------*/
+  HOME: {
+    key: "home-snap-gram",
+    name: "Home",
+    path: "/",
+    exact: false,
+  },
   EXPLORE: {
     key: "explore",
     name: "Explore",
@@ -70,42 +76,15 @@ export const ROUTES = {
     path: "/posts/:id",
     exact: false,
   },
-
+  /*-----------MORE-------------------*/
   NOT_FOUND: {
     key: "notFound",
     name: "Not Found",
-    path: "/not-found",
+    path: "*",
     exact: false,
     isPrivate: false,
   },
 };
-export const sidebarLinks = [
-  {
-    imgURL: "/assets/icons/home.svg",
-    route: "/",
-    label: "Home",
-  },
-  {
-    imgURL: "/assets/icons/wallpaper.svg",
-    route: "/explore",
-    label: "Explore",
-  },
-  {
-    imgURL: "/assets/icons/people.svg",
-    route: "/all-users",
-    label: "People",
-  },
-  {
-    imgURL: "/assets/icons/bookmark.svg",
-    route: "/saved",
-    label: "Saved",
-  },
-  {
-    imgURL: "/assets/icons/gallery-add.svg",
-    route: "/create-post",
-    label: "Create Post",
-  },
-];
 
 export const BottomBarLinks = [
   {

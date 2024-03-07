@@ -68,7 +68,7 @@ const RegisterForm = () => {
       if (!session) {
         toast({ title: "Something went wrong. Please login your new account" });
 
-        navigate(ROUTES.LOGIN.path);
+        navigate(ROUTES.LOGIN.path, { replace: true });
 
         return;
       }
@@ -78,7 +78,7 @@ const RegisterForm = () => {
       if (isLoggedIn) {
         form.reset();
 
-        navigate("/");
+        navigate(ROUTES.SNAP_GRAM.path);
       } else {
         toast({ title: "Login failed. Please try again." });
 

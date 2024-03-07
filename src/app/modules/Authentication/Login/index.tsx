@@ -19,6 +19,7 @@ import Loader from "@/app/components/atoms/Loader";
 import { useSignInAccount } from "@/app/queries/SnapGram/queries.ts";
 import { useUserContext } from "@/store/AuthContext.tsx";
 import { useToast } from "@/app/components/ui/use-toast.ts";
+import { ROUTES } from "@/constants/routes.ts";
 
 // Component
 
@@ -50,19 +51,15 @@ const Login: React.FC<Props> = (props) => {
     const session = await signInAccount(user);
     if (!session) {
       toast({ title: "Login failed. Please try again." });
-
       return;
     }
 
     const isLoggedIn = await checkAuthUser();
-    console.log("isLoggedIn", isLoggedIn);
     if (isLoggedIn) {
       form.reset();
-
-      navigate("/");
+      navigate(ROUTES.SNAP_GRAM.path);
     } else {
       toast({ title: "Login failed. Please try again." });
-
       return;
     }
   };

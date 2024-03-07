@@ -12,7 +12,11 @@ interface Props {
 }
 
 const NotFoundPage: React.FC<Props> = () => {
-  return <div></div>;
+  return (
+    <div className={"flex justify-center items-center font-bold text-white "}>
+      NOT FOUND
+    </div>
+  );
 };
 
 export default NotFoundPage;

@@ -1,20 +1,23 @@
-import { Outlet } from "react-router-dom";
+// Libraries
+// Components
+import TopBar from "@/app/components/organisms/Topbar";
+import LeftSidebar from "@/app/components/organisms/LeftSidebar";
 
-// import Bottombar from "@/components/shared/Bottombar";
-// import LeftSidebar from "@/components/shared/LeftSidebar";
-import Topbar from "@/app/components/organisms/Topbar";
+// Constants
+import BottomBar from "@/app/components/organisms/BottomBar";
+import { Outlet } from "react-router-dom";
 
 const SnapGram = () => {
   return (
     <div className="w-full md:flex">
-      <Topbar />
-      {/*<LeftSidebar />*/}
+      <TopBar />
+      <LeftSidebar />
 
       <section className="flex flex-1 h-full">
         <Outlet />
       </section>
 
-      {/*<Bottombar />*/}
+      <BottomBar />
     </div>
   );
 };
