@@ -20,6 +20,7 @@ import Profile from "@/app/modules/SnapGram/containers/Profile";
 import CreatePost from "@/app/modules/SnapGram/containers/CreatePost";
 import UpdatePost from "@/app/modules/SnapGram/containers/UpdatePost";
 import UpdateProfile from "@/app/modules/SnapGram/containers/UpdateProfile";
+import PostDetail from "@/app/modules/SnapGram/containers/PostDetail";
 
 const routes: TRoutes = [
   {
@@ -104,6 +105,10 @@ const rootRoutes = createBrowserRouter([
           {
             path: ROUTES.UPDATE_POST.path,
             element: <UpdatePost />,
+          },
+          {
+            path: ROUTES.POST_DETAIL.path,
+            element: <PostDetail />,
           },
           {
             path: ROUTES.UPDATE_PROFILE.path,

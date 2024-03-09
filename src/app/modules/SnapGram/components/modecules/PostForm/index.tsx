@@ -51,6 +51,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
 
   // Handler
   const handleSubmit = async (value: z.infer<typeof PostValidation>) => {
+    console.log("Submit Value Create Post:", value);
     // ACTION = UPDATE
     if (post && action === "Update") {
       const updatedPost = await updatePost({
@@ -79,7 +80,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
         title: `${action} post failed. Please try again.`,
       });
     }
-    navigate("/");
+    //navigate("/");
   };
 
   return (

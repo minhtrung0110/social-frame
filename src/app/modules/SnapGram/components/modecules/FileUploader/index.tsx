@@ -16,7 +16,7 @@ interface Props {
 }
 
 const FileUploader: React.FC<Props> = (props) => {
-  const { fileChange, mediaUrl } = props;
+  const { fieldChange, mediaUrl } = props;
   const [file, setFile] = useState<File[]>([]);
   const [fileUrl, setFileUrl] = useState<string>(mediaUrl);
 

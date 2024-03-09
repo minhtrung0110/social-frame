@@ -54,7 +54,7 @@ export const ROUTES = {
   UPDATE_POST: {
     key: "update-post",
     name: "Update Post",
-    path: "/update-post",
+    path: "/update-post/:id",
     exact: false,
   },
   PROFILE: {
