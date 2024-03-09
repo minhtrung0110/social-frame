@@ -5,6 +5,7 @@ import { useUserContext } from "@/store/AuthContext.tsx";
 import { Link } from "react-router-dom";
 import { multiFormatDateString } from "@/app/utils";
 import PostStats from "@/app/modules/SnapGram/components/modecules/PostStats";
+import { ROUTES } from "@/constants/routes.ts";
 
 // Component
 
@@ -25,7 +26,7 @@ const PostCard: React.FC<Props> = (props) => {
     <div className="post-card">
       <div className="flex-between">
         <div className="flex items-center gap-3">
-          <Link to={`/profile/${post.creator.$id}`}>
+          <Link to={`/${ROUTES.PROFILE.key}/${post.creator.$id}`}>
             <img
               src={
                 post.creator?.imageUrl ||

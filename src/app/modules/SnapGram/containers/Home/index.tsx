@@ -19,7 +19,7 @@ interface Props {
   // Define your component's props here
 }
 
-const Home: React.FC<Props> = (props) => {
+const Home: React.FC<Props> = () => {
   // const { toast } = useToast();
 
   const {

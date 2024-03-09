@@ -114,6 +114,10 @@ const rootRoutes = createBrowserRouter([
             path: ROUTES.UPDATE_PROFILE.path,
             element: <UpdateProfile />,
           },
+          {
+            path: ROUTES.POST_DETAIL.path,
+            element: <PostDetail />,
+          },
         ],
       },
     ],

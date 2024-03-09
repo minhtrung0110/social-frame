@@ -12,6 +12,7 @@ import {
 } from "@/app/queries/SnapGram/queries.ts";
 import PostStats from "@/app/modules/SnapGram/components/modecules/PostStats";
 import GridPostList from "@/app/modules/SnapGram/components/modecules/GridPostList";
+import { useToast } from "@/app/components/ui/use-toast.ts";
 
 // Component
 
@@ -27,7 +28,7 @@ const PostDetail: React.FC<Props> = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { user } = useUserContext();
-
+  const { toast } = useToast();
   const { data: post, isLoading } = useGetPostById(id);
   const { data: userPosts, isLoading: isUserPostLoading } = useGetUserPosts(
     post?.creator.$id
@@ -40,6 +41,7 @@ const PostDetail: React.FC<Props> = () => {
 
   const handleDeletePost = () => {
     deletePost({ postId: id, imageId: post?.imageId });
+
     navigate(-1);
   };
 
