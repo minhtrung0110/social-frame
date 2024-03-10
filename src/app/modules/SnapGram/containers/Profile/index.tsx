@@ -1,5 +1,4 @@
 // Libraries
-import React from "react";
 import {
   Link,
   Outlet,
@@ -20,10 +19,6 @@ import LikedPosts from "@/app/modules/SnapGram/containers/LikedPost";
 // Style
 
 // Types
-
-interface Props {
-  // Define your component's props here
-}
 
 interface StabBlockProps {
   value: string | number;

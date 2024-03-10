@@ -33,6 +33,17 @@ module.exports = {
         "light-3": "#7878A3",
         "light-4": "#5C5C7B",
       },
+      fontSize: {
+        xsm: "0.2rem",
+        ssm: "0.5rem",
+        sm: "0.8rem",
+        base: "1rem",
+        xl: "1.25rem",
+        "2xl": "1.563rem",
+        "3xl": "1.953rem",
+        "4xl": "2.441rem",
+        "5xl": "3.052rem",
+      },
       screens: {
         xs: "480px",
       },

@@ -15,6 +15,18 @@
 }
 
 @layer utilities {
+
+  /* OVERTITE*/
+  .focus-visible\:ring-2:focus-visible {
+    box-shadow: none !important;
+  }
+  /* BACKGROUND*/
+  .bg-popover {
+    background-color: hsl(240,10%,3.9%);
+  }
+  .bg-accent:focus {
+    background-color: hsl(240,3.7%,15.9%);
+  }
   /* TYPOGRAPHY */
   .h1-bold {
     @apply text-[36px] font-bold leading-[140%] tracking-tighter;
@@ -259,11 +271,12 @@
   }
 
   .shad-input {
-    @apply h-12 bg-dark-4 border-none placeholder:text-light-4 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+    @apply h-12 bg-dark-4 border-none placeholder:text-light-4  !important;
+    /*focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3*/
   }
 
   .shad-textarea {
-    @apply h-36 bg-dark-3 rounded-xl border-none focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+    @apply  bg-dark-3 rounded-xl border-none focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
   }
 
   /* Button */

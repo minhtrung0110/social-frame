@@ -13,6 +13,13 @@ import {
 import PostStats from "@/app/modules/SnapGram/components/modecules/PostStats";
 import GridPostList from "@/app/modules/SnapGram/components/modecules/GridPostList";
 import { useToast } from "@/app/components/ui/use-toast.ts";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/app/components/ui/dropdown-menu.tsx";
+import { DeleteIcon, EditIcon, MoreIcon } from "@/app/components/atoms/icons";
 
 // Component
 
@@ -41,7 +48,9 @@ const PostDetail: React.FC<Props> = () => {
 
   const handleDeletePost = () => {
     deletePost({ postId: id, imageId: post?.imageId });
-
+    toast({
+      title: "Delete Post ....",
+    });
     navigate(-1);
   };
 
@@ -102,30 +111,36 @@ const PostDetail: React.FC<Props> = () => {
               </Link>
 
               <div className="flex-center gap-4">
-                <Link
-                  to={`/update-post/${post?.$id}`}
-                  className={`${user.id !== post?.creator.$id && "hidden"}`}>
-                  <img
-                    src={"/assets/icons/edit.svg"}
-                    alt="edit"
-                    width={24}
-                    height={24}
-                  />
-                </Link>
-
-                <Button
-                  onClick={handleDeletePost}
-                  variant="ghost"
-                  className={`ost_details-delete_btn ${
-                    user.id !== post?.creator.$id && "hidden"
-                  }`}>
-                  <img
-                    src={"/assets/icons/delete.svg"}
-                    alt="delete"
-                    width={24}
-                    height={24}
-                  />
-                </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className=" p-1 hover:border hover:border-solid hover:border-gray-700 hover:bg-gray-800 rounded">
+                    <MoreIcon width={25} height={25} />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem className={"p-0 rounded-md"}>
+                      <Link
+                        to={`/update-post/${post?.$id}`}
+                        className={`${user.id !== post?.creator.$id && "hidden"} px-4 py-1`}>
+                        <span className="flex justify-content items-center">
+                          <EditIcon className="mr-2" width={20} />
+                          Update Post
+                        </span>
+                      </Link>{" "}
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className={"p-0 rounded-md"}>
+                      <Button
+                        onClick={handleDeletePost}
+                        variant="ghost"
+                        className={`ost_details-delete_btn ${
+                          user.id !== post?.creator.$id && "hidden"
+                        }`}>
+                        <span className="flex justify-content items-center">
+                          <DeleteIcon width={20} className="mr-2" />
+                          Delete Post
+                        </span>
+                      </Button>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </div>
 

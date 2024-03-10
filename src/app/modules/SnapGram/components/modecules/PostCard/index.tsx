@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { multiFormatDateString } from "@/app/utils";
 import PostStats from "@/app/modules/SnapGram/components/modecules/PostStats";
 import { ROUTES } from "@/constants/routes.ts";
+import Comments from "@/app/modules/SnapGram/components/modecules/Comments";
 
 // Component
 
@@ -85,6 +86,7 @@ const PostCard: React.FC<Props> = (props) => {
       </Link>
 
       <PostStats post={post} userId={user.id} />
+      <Comments amount={150} />
     </div>
   );
 };
