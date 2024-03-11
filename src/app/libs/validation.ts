@@ -46,3 +46,10 @@ export const PostValidation = z.object({
     .max(1000, { message: "Maximum 1000 characters." }),
   tags: z.string(),
 });
+
+export const CommentValidation = z.object({
+  message: z
+    .string()
+    .min(1, { message: "Minimum 1 characters." })
+    .max(2200, { message: "Maximum 2,200 caracters" }),
+});

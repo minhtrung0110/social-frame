@@ -548,3 +548,31 @@ export async function updateUser(user: IUpdateUser) {
     console.log(error);
   }
 }
+
+//==================COMMENTS
+export async function createComment(
+  content: string,
+  created: Date,
+  userId: string,
+  postId: string
+) {
+  try {
+    const result = await databases.createDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.commentsCollectionId,
+      ID.unique(),
+      {
+        content: content,
+        created: created,
+        userId: userId,
+        postId: postId,
+      }
+    );
+
+    if (!result) throw Error;
+
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+}
